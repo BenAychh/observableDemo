@@ -21,6 +21,7 @@ export class ErrorHandlingComponent implements OnInit {
   code =
 `constructor() {
   this.observable = new Observable((observer: Subscriber<string>) => {
+    console.log('Observable subscribed');
     this.someAsyncFunction(observer);
   });
 }
@@ -30,7 +31,7 @@ someAsyncFunction(observer: Subscriber<string>) {
     if (this.callCount-- > 0) {
       observer.error('Not low enough yet');
     } else {
-      observer.next('You retried enough times! So persistant');
+      observer.next('You retried enough times! So persistent');
     }
   }, 1000);
 }`;
@@ -77,7 +78,7 @@ someAsyncFunction(observer: Subscriber<string>) {
       if (this.callCount-- > 0) {
         observer.error('Not low enough yet');
       } else {
-        observer.next('You retried enough times! So persistant');
+        observer.next('You retried enough times! So persistent');
       }
     }, 1000);
   }

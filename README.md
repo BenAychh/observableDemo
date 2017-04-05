@@ -3,6 +3,7 @@
 Just a quick demo to show off some of the things that obserables can do.
 
 For more information check out
+
 http://rxmarbles.com/
 
 http://reactivex.io/ (the observable library I am using today)
