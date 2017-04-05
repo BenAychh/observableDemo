@@ -1,0 +1,27 @@
+.titles {
+  text-align: center;
+  .ui-g-4, .ui-g-6, .ui-g-12 {
+    color: #323232;
+    background-color: #ededed;
+    border: 1px solid white;
+  }
+}
+
+div.code {
+  pre {
+    width: 100%;
+  }
+}
+
+.content {
+  .ui-g-4, .ui-g-6, .ui-g-12 {
+    white-space: pre;
+    height: 200px;
+    border: 1px solid #ededed;
+    overflow: scroll;
+  }
+}
+
+:host /deep/ .red {
+  color: red;
+}

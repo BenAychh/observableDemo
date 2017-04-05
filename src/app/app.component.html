@@ -1,3 +1,26 @@
-<h1>
-  {{title}}
-</h1>
+<p-tabView>
+    <p-tabPanel header="O v. P">
+      <app-promises-vs-observables></app-promises-vs-observables>
+    </p-tabPanel>
+    <p-tabPanel header="Cancelling">
+      <app-cancellable></app-cancellable>
+    </p-tabPanel>
+    <p-tabPanel header="Smart Cancelling">
+      <app-smart-cancelling></app-smart-cancelling>
+    </p-tabPanel>
+    <p-tabPanel header="Errors!">
+      <app-error-handling></app-error-handling>
+    </p-tabPanel>
+    <p-tabPanel header="Cold Observables">
+      <app-view-observable></app-view-observable>
+    </p-tabPanel>
+    <p-tabPanel header="Mouse (Hot Observable)">
+      <app-mouse-move></app-mouse-move>
+    </p-tabPanel>
+    <p-tabPanel header="Mouse (Click Cancel)">
+      <app-mouse-cancel-click></app-mouse-cancel-click>
+    </p-tabPanel>
+    <p-tabPanel header="Mouse (Position Cancel)">
+      <app-mouse-position-cancel></app-mouse-position-cancel>
+    </p-tabPanel>
+</p-tabView>

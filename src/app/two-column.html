@@ -1,0 +1,36 @@
+<div *ngIf="code" class="ui-g code" highlight-js-content=".highlight">
+  <pre>
+    <code class="typescript highlight">
+{{code}}
+    </code>
+  </pre>
+</div>
+<div class="ui-g code">
+  <div class="ui-g-6" highlight-js-content=".highlight">
+      <pre>
+        <code class="typescript highlight">
+{{code1}}
+        </code>
+      </pre>
+  </div>
+  <div class="ui-g-6" highlight-js-content=".highlight">
+    <pre>
+      <code class="typescript highlight">
+{{code2}}
+      </code>
+    </pre>
+  </div>
+</div>
+
+<div class="ui-g titles">
+  <div class="ui-g-6">{{column1Title}}</div>
+  <div class="ui-g-6">{{column2Title}}</div>
+</div>
+<div class="ui-g content">
+  <div #column1Content [innerHTML]="column1" class="ui-g-6" [scrollTop]="column1Content.scrollHeight"></div>
+  <div #column2Content [innerHTML]="column2" class="ui-g-6" [scrollTop]="column2Content.scrollHeight"></div>
+</div>
+<div class="ui-g">
+  <button *ngIf="button1Text" (click)="button1Action()" class="ui-g-6">{{button1Text}}</button>
+  <button *ngIf="button2Text" (click)="button2Action()" class="ui-g-6">{{button2Text}}</button>
+</div>
