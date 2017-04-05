@@ -1,4 +1,4 @@
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { log } from '../log';
 
@@ -12,16 +12,14 @@ export class MouseCancelClickComponent implements OnInit {
   column1Title = 'Mouse Coordinates';
   button1Text = 'Start Mouse Capture';
   column1 = '';
-  subscription: Subscription;
   code =
 `button1Action() {
-  this.column1 = '';
-  this.subscription = Observable.fromEvent(document, 'mousemove')
-                                .takeUntil(this.clickObservable())
-                                .subscribe((e: MouseEvent) => {
-                                  log.bind(this)(1, \`(\${e.clientX}, \${e.clientY})\`);
-                                  this.cd.markForCheck();
-                                });
+  Observable.fromEvent(document, 'mousemove')
+            .takeUntil(this.clickObservable())
+            .subscribe((e: MouseEvent) => {
+              log.bind(this)(1, \`(\${e.clientX}, \${e.clientY})\`);
+              this.cd.markForCheck();
+            });
 }
 
 clickObservable() {
@@ -38,12 +36,12 @@ clickObservable() {
 
   button1Action() {
     this.column1 = '';
-    this.subscription = Observable.fromEvent(document, 'mousemove')
-                        .takeUntil(this.clickObservable())
-                        .subscribe((e: MouseEvent) => {
-                          log.bind(this)(1, `(${e.clientX}, ${e.clientY})`);
-                          this.cd.markForCheck();
-                        });
+    Observable.fromEvent(document, 'mousemove')
+              .takeUntil(this.clickObservable())
+              .subscribe((e: MouseEvent) => {
+                log.bind(this)(1, `(${e.clientX}, ${e.clientY})`);
+                this.cd.markForCheck();
+              });
   }
 
   clickObservable() {

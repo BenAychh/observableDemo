@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import { log } from '../log';
 
 @Component({
@@ -9,7 +9,6 @@ import { log } from '../log';
   styleUrls: ['../everyScreen.scss']
 })
 export class SmartCancellingComponent implements OnInit {
-  subscription: Subscription;
   observable: Observable<number>;
   column1 = '';
   button1Text = 'Start Observable';
@@ -24,7 +23,7 @@ export class SmartCancellingComponent implements OnInit {
 }
 
 button1Action() {
-  this.subscription = this.observable.take(10).subscribe((response) => {
+  this.observable.take(10).subscribe((response) => {
     console.log(response);
   });
 }`;
@@ -42,7 +41,7 @@ button1Action() {
   }
 
   button1Action() {
-    this.subscription = this.observable.take(10).subscribe((response) => {
+    this.observable.take(10).subscribe((response) => {
       log.bind(this)(1, response);
       this.cd.markForCheck();
     });
